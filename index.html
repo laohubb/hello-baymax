@@ -6,6 +6,7 @@
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
     <title>baymax</title>
     <style>
+
         body {
             margin: 0;
             padding: 0;
@@ -15,7 +16,6 @@
         .box {
             position: relative;
             width: 100%;
-            height: 70vh;
             overflow: hidden;
         }
         @media screen and (max-width: 500px) {
@@ -29,6 +29,7 @@
                 right: 55rem;
             }
             button{
+
                 margin-top: 10rem;
             }
             .container{
@@ -55,14 +56,12 @@
                 top: 80rem;
             }
         }
-
         .buttons{
             position: absolute;
             display: flex;
         }
         #text{
             position: absolute;
-            height: 28vh;
             width: 50%;
             overflow: scroll;
             bottom: 0;
@@ -73,12 +72,15 @@
             display: none; /* Chrome Safari */
         }
         .buttons button{
+            touch-action: none;
+            color: black;
+            padding: 5px 0;
             height: 40rem;
             width: 60rem;
             margin-left: 10rem;
             border: 0;
-            background-color: #e1e5ea;
-            border-radius: 2rem;
+            background-color: white;
+            border-radius: 4rem;
         }
         .hi{
             display: none;
@@ -116,6 +118,27 @@
 
 
 <script src="main.js"></script>
+<script>
+    function safariHacks() {
+        let windowsVH = window.innerHeight ;
+        document.querySelector('.box').setAttribute(`style`,`height: ${windowsVH*0.7}px;`);
+        document.querySelector('#text').setAttribute(`style`,`height: ${windowsVH*0.28}px;`);
+    }
+    safariHacks();
+
+
+    // 禁止页面缩放
+    window.onload = function () {
+        document.addEventListener("touchstart", function (event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        });
+        document.addEventListener("gesturestart", function (event) {
+            event.preventDefault();
+        });
+    };
+</script>
 </body>
 <style>
 
