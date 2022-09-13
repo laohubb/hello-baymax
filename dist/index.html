@@ -2,12 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
     <title>baymax</title>
-    <style>
-
-        body {
+    <style>body {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -84,8 +81,7 @@
         }
         .hi{
             display: none;
-        }
-    </style>
+        }</style>
 
 
     <style></style>
@@ -117,28 +113,25 @@
 </div>
 
 
-<script src="main.js"></script>
-<script>
-    function safariHacks() {
-        let windowsVH = window.innerHeight ;
-        document.querySelector('.box').setAttribute(`style`,`height: ${windowsVH*0.7}px;`);
-        document.querySelector('#text').setAttribute(`style`,`height: ${windowsVH*0.28}px;`);
+<script src="/main.1f19ae8e.js"></script>
+<script>function safariHacks() {
+  var windowsVH = window.innerHeight;
+  document.querySelector('.box').setAttribute("style", "height: ".concat(windowsVH * 0.7, "px;"));
+  document.querySelector('#text').setAttribute("style", "height: ".concat(windowsVH * 0.28, "px;"));
+}
+
+safariHacks(); // 禁止页面缩放
+
+window.onload = function () {
+  document.addEventListener("touchstart", function (event) {
+    if (event.touches.length > 1) {
+      event.preventDefault();
     }
-    safariHacks();
-
-
-    // 禁止页面缩放
-    window.onload = function () {
-        document.addEventListener("touchstart", function (event) {
-            if (event.touches.length > 1) {
-                event.preventDefault();
-            }
-        });
-        document.addEventListener("gesturestart", function (event) {
-            event.preventDefault();
-        });
-    };
-</script>
+  });
+  document.addEventListener("gesturestart", function (event) {
+    event.preventDefault();
+  });
+};</script>
 </body>
 <style>
 
